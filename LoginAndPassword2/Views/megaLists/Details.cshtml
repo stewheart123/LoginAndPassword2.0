@@ -26,90 +26,55 @@
             @Html.DisplayFor(model => model.restaurant_location)
         </dd>
 
+        @*<dt>
+                @Html.DisplayNameFor(model => model.ranking)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ranking)
+            </dd>*@
+
         <dt>
-            @Html.DisplayNameFor(model => model.ranking)
+            @Html.DisplayNameFor(model => model.service) @stars(Model.service)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ranking)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.service)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.service)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.service_comment)
-        </dt>
-
-        <dd>
+            @*@Html.DisplayFor(model => model.service)*@
+            @*@Html.DisplayNameFor(model => model.service_comment)*@
             @Html.DisplayFor(model => model.service_comment)
-        </dd>
+
+        </dd>   
 
         <dt>
-            @Html.DisplayNameFor(model => model.value)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.value)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.value_comment)
+            @Html.DisplayNameFor(model => model.value) @stars(Model.value)
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.value_comment)
-        </dd>
+            @*@Html.DisplayFor(model => model.value)*@
+        </dd>       
 
         <dt>
-            @Html.DisplayNameFor(model => model.ambience)
+            @Html.DisplayNameFor(model => model.ambience) @stars(Model.ambience)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ambience)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ambience_comment)
-        </dt>
-
-        <dd>
+            @*@Html.DisplayFor(model => model.ambience)*@
             @Html.DisplayFor(model => model.ambience_comment)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.menu)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.menu)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.menu_comment)
-        </dt>
-
+            @Html.DisplayNameFor(model => model.menu) @stars(Model.menu)
+        </dt>     
+     
         <dd>
             @Html.DisplayFor(model => model.menu_comment)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.eco_friendly)
+            @Html.DisplayNameFor(model => model.eco_friendly) @stars(Model.eco_friendly)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.eco_friendly)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.eco_friendly_comment)
-        </dt>
-
+              
         <dd>
             @Html.DisplayFor(model => model.eco_friendly_comment)
         </dd>
@@ -136,3 +101,14 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.restaurant_id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+@helper stars(int value)
+    {if (value == 0)
+        {<p>Big fat zero</p>}
+        else
+        {
+            for (int x = value; x > 0; x--)
+            {<img class="starSmall" src="http://www.stickpng.com/assets/images/580b585b2edbce24c47b2913.png" />}
+        }
+
+    }
