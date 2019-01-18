@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="apprenticeTest2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="megaList">
+          <Key>
+            <PropertyRef Name="restaurant_id" />
+          </Key>
+          <Property Name="restaurant_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="restaurant_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="restaurant_location" Type="varchar" MaxLength="50" />
+          <Property Name="ranking" Type="int" />
+          <Property Name="service" Type="int" Nullable="false" />
+          <Property Name="service_comment" Type="varchar(max)" />
+          <Property Name="value" Type="int" Nullable="false" />
+          <Property Name="value_comment" Type="varchar(max)" />
+          <Property Name="ambience" Type="int" Nullable="false" />
+          <Property Name="ambience_comment" Type="varchar(max)" />
+          <Property Name="menu" Type="int" Nullable="false" />
+          <Property Name="menu_comment" Type="varchar(max)" />
+          <Property Name="eco_friendly" Type="int" Nullable="false" />
+          <Property Name="eco_friendly_comment" Type="varchar(max)" />
+          <Property Name="would_go_again" Type="bit" />
+          <Property Name="tempt_me_back" Type="varchar(max)" />
+        </EntityType>
+        <EntityContainer Name="apprenticeTest2ModelStoreContainer">
+          <EntitySet Name="megaList" EntityType="Self.megaList" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="apprenticeTest2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="megaList">
+          <Key>
+            <PropertyRef Name="restaurant_id" />
+          </Key>
+          <Property Name="restaurant_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="restaurant_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="restaurant_location" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ranking" Type="Int32" />
+          <Property Name="service" Type="Int32" Nullable="false" />
+          <Property Name="service_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="Int32" Nullable="false" />
+          <Property Name="value_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ambience" Type="Int32" Nullable="false" />
+          <Property Name="ambience_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="menu" Type="Int32" Nullable="false" />
+          <Property Name="menu_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="eco_friendly" Type="Int32" Nullable="false" />
+          <Property Name="eco_friendly_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="would_go_again" Type="Boolean" />
+          <Property Name="tempt_me_back" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="apprenticeTest2Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="megaLists" EntityType="Self.megaList" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="apprenticeTest2ModelStoreContainer" CdmEntityContainer="apprenticeTest2Entities">
+          <EntitySetMapping Name="megaLists">
+            <EntityTypeMapping TypeName="apprenticeTest2Model.megaList">
+              <MappingFragment StoreEntitySet="megaList">
+                <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
+                <ScalarProperty Name="restaurant_name" ColumnName="restaurant_name" />
+                <ScalarProperty Name="restaurant_location" ColumnName="restaurant_location" />
+                <ScalarProperty Name="ranking" ColumnName="ranking" />
+                <ScalarProperty Name="service" ColumnName="service" />
+                <ScalarProperty Name="service_comment" ColumnName="service_comment" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="value_comment" ColumnName="value_comment" />
+                <ScalarProperty Name="ambience" ColumnName="ambience" />
+                <ScalarProperty Name="ambience_comment" ColumnName="ambience_comment" />
+                <ScalarProperty Name="menu" ColumnName="menu" />
+                <ScalarProperty Name="menu_comment" ColumnName="menu_comment" />
+                <ScalarProperty Name="eco_friendly" ColumnName="eco_friendly" />
+                <ScalarProperty Name="eco_friendly_comment" ColumnName="eco_friendly_comment" />
+                <ScalarProperty Name="would_go_again" ColumnName="would_go_again" />
+                <ScalarProperty Name="tempt_me_back" ColumnName="tempt_me_back" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
