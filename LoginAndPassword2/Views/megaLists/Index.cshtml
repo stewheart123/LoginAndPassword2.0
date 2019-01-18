@@ -1,0 +1,103 @@
+﻿@model IEnumerable<LoginAndPassword2.Models.megaList>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create", new { controller = "TestController", id = 1 },
+    new  {@class = "boldHover"})
+</p>
+
+
+@foreach (var item in Model)
+{<div class="sorter">
+        <div class="accordion">
+            <h4><span>@Html.DisplayFor(modelItem => item.restaurant_name),  @Html.DisplayFor(modelItem => item.restaurant_location)</span></h4>
+            <div class="tabs">
+                <ul>
+                    <li><a href="#tabs-0">@Html.DisplayNameFor(model => model.service)</a></li>
+                    <li><a href="#tabs-1">@Html.DisplayNameFor(model => model.value)</a></li>
+                    <li><a href="#tabs-2">@Html.DisplayNameFor(model => model.ambience)</a></li>
+                    <li><a href="#tabs-3">@Html.DisplayNameFor(model => model.menu)</a></li>
+                    <li><a href="#tabs-4">@Html.DisplayNameFor(model => model.eco_friendly)</a></li>
+                    <li><a href="#tabs-5">@Html.DisplayNameFor(model => model.would_go_again)</a></li>
+
+
+                </ul>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                    @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })*@
+                <div id="tabs-0">
+                    @stars(item.service)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.service_comment)
+                </div>
+                <div id="tabs-1">
+                    @stars(item.value)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.value_comment)
+                </div>
+                <div id="tabs-2">
+                    @stars(item.ambience)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.ambience_comment)
+
+                </div>
+                <div id="tabs-3">
+                    @stars(item.menu)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.menu_comment)
+                </div>
+                <div id="tabs-4">
+                    @stars(item.eco_friendly)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.eco_friendly_comment)
+                </div>
+                <div id="tabs-5">
+                    @Html.DisplayFor(modelItem => item.would_go_again) <br />
+                    @Html.DisplayNameFor(model => model.tempt_me_back)
+                    @Html.DisplayFor(modelItem => item.tempt_me_back)
+                </div>
+
+                @helper stars(int value)
+                {if (value == 0)
+                    {<p>Big fat zero</p>}
+                    else
+                    {
+                        for (int x = value; x > 0; x--)
+                        {<img class="starSmall" src="http://www.stickpng.com/assets/images/580b585b2edbce24c47b2913.png" />}
+                    }
+
+                }
+                @Html.ActionLink("Edit", "Edit", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+
+            </div>
+        </div>
+    </div>  }
+
+
+
+
+
+
+@section Scripts{
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(".accordion").accordion({
+            collapsible: true,
+            active: false
+        });
+        $(".tabs, .tab1").tabs();
+        $(".sorter").sortable();
+        $(".sorter").disableSelection();
+    </script>
+
+}
+

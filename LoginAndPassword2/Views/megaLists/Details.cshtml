@@ -1,0 +1,138 @@
+﻿@model LoginAndPassword2.Models.megaList
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>megaList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ranking)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ranking)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service_comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.service_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value_comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ambience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ambience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ambience_comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ambience_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menu_comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eco_friendly)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eco_friendly)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eco_friendly_comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eco_friendly_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.would_go_again)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.would_go_again)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempt_me_back)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempt_me_back)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.restaurant_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
