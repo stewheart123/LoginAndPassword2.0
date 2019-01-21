@@ -12,7 +12,7 @@ namespace LoginAndPassword2.Controllers
 {
     public class megaListsController : Controller
     {
-        private apprenticeTest2Entities db = new apprenticeTest2Entities();
+        private Entities db = new Entities();
 
         // GET: megaLists
         public ActionResult Index()

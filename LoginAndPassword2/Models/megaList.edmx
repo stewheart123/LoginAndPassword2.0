@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="apprenticeTest2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MegaList.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="megaList">
           <Key>
             <PropertyRef Name="restaurant_id" />
@@ -26,14 +26,14 @@
           <Property Name="would_go_again" Type="bit" />
           <Property Name="tempt_me_back" Type="varchar(max)" />
         </EntityType>
-        <EntityContainer Name="apprenticeTest2ModelStoreContainer">
+        <EntityContainer Name="MegaListStoreContainer">
           <EntitySet Name="megaList" EntityType="Self.megaList" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="apprenticeTest2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="MegaList" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="megaList">
           <Key>
             <PropertyRef Name="restaurant_id" />
@@ -55,7 +55,7 @@
           <Property Name="would_go_again" Type="Boolean" />
           <Property Name="tempt_me_back" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="apprenticeTest2Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="megaLists" EntityType="Self.megaList" />
         </EntityContainer>
       </Schema>
@@ -63,9 +63,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="apprenticeTest2ModelStoreContainer" CdmEntityContainer="apprenticeTest2Entities">
+        <EntityContainerMapping StorageEntityContainer="MegaListStoreContainer" CdmEntityContainer="Entities">
           <EntitySetMapping Name="megaLists">
-            <EntityTypeMapping TypeName="apprenticeTest2Model.megaList">
+            <EntityTypeMapping TypeName="MegaList.megaList">
               <MappingFragment StoreEntitySet="megaList">
                 <ScalarProperty Name="restaurant_id" ColumnName="restaurant_id" />
                 <ScalarProperty Name="restaurant_name" ColumnName="restaurant_name" />

@@ -13,10 +13,10 @@ namespace LoginAndPassword2.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class apprenticeTest2Entities : DbContext
+    public partial class Entities : DbContext
     {
-        public apprenticeTest2Entities()
-            : base("name=apprenticeTest2Entities")
+        public Entities()
+            : base("name=Entities")
         {
         }
     

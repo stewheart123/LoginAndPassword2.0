@@ -33,25 +33,19 @@
             </div>
         </div>
 
-        @*<div class="form-group">
+        <div class="form-group">
             @Html.LabelFor(model => model.ranking, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.ranking, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ranking, "", new { @class = "text-danger" })
             </div>
-        </div>*@
+        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.service, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.service, new { htmlAttributes = new { @class = "form-control" } })*@
-
-                @for (var y = 0; y < 6; y++)
-                {
-                    @Html.RadioButtonFor(model => model.service, y)@Html.Label(y.ToString())
-                }
+                @Html.EditorFor(model => model.service, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.service, "", new { @class = "text-danger" })
-                
             </div>
         </div>
 
@@ -66,11 +60,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.value, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @*@Html.EditorFor(model => model.value, new { htmlAttributes = new { @class = "form-control" } })*@
-                @for (var y = 0; y < 6; y++)
-                {
-                    @Html.RadioButtonFor(model => model.value, y)@Html.Label(y.ToString())
-                }
+                @Html.EditorFor(model => model.value, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.value, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -86,10 +76,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.ambience, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @for (var y = 0; y < 6; y++)
-                {
-                    @Html.RadioButtonFor(model => model.ambience, y)@Html.Label(y.ToString())
-                }
+                @Html.EditorFor(model => model.ambience, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.ambience, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -105,10 +92,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.menu, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @for (var y = 0; y < 6; y++)
-                {
-                    @Html.RadioButtonFor(model => model.menu, y)@Html.Label(y.ToString())
-                }
+                @Html.EditorFor(model => model.menu, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.menu, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -124,10 +108,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.eco_friendly, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @for (var y = 0; y < 6; y++)
-                {
-                    @Html.RadioButtonFor(model => model.eco_friendly, y)@Html.Label(y.ToString())
-                }
+                @Html.EditorFor(model => model.eco_friendly, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.eco_friendly, "", new { @class = "text-danger" })
             </div>
         </div>
