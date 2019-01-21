@@ -117,16 +117,3 @@ img.starSmall {
         text-align: left;
     }
 }
-@media (min-width: 768px) {
-    .dl-horizontal dt {
-        width: auto;
-        margin-right: 2em;
-    }
-}
-
-
-@media (min-width: 768px) {
-    .dl-horizontal dd {
-        margin-left: 0px;
-    }
-}
