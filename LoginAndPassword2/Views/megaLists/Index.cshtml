@@ -5,11 +5,17 @@
 }
 
 <h2>Index</h2>
-
+@if (Request.IsAuthenticated)
+{
 <p>
     @Html.ActionLink("Create New", "Create", new { controller = "megaLists", id = 1 },
     new  {@class = "boldHover"})
 </p>
+}
+
+else
+{ <p>login to add to the list</p>}
+
 
 
 @foreach (var item in Model)
@@ -28,8 +34,8 @@
 
                 </ul>
                 @*@Html.ActionLink("Edit", "Edit", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
-                    @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
-                    @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })*@
+        @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+        @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })*@
                 <div id="tabs-0">
                     @stars(item.service)
                     <br />
@@ -72,9 +78,22 @@
                     }
 
                 }
-                @Html.ActionLink("Edit", "Edit", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
-                @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
-                @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+
+                @if (Request.IsAuthenticated)
+                {
+                         <p>
+                             @Html.ActionLink("Edit", "Edit", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                             @Html.ActionLink("Details", "Details", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+                             @Html.ActionLink("Delete", "Delete", new { id = item.restaurant_id }, new { @class = "boldHover iconButton" })
+
+                         </p>
+                }
+
+                @*else
+                { <p class="boldHover iconButton">login to edit or delete</p>}*@
+
+
+                
 
             </div>
         </div>
