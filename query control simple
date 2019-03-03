@@ -1,0 +1,42 @@
+ public ActionResult Index()
+        {
+            
+               // example query that filters only ambience over 3
+            //var query = db.megaLists
+            //                     .Where(s => s.ambience > 3);
+            //return View(query);
+           // example that matches ambience to value set in url request
+
+            string testrequest = Request.QueryString.ToString();
+            if (testrequest == "")
+            {
+                return View(db.megaLists.ToList());               
+            }
+
+            else
+            {
+                var query = db.megaLists
+                    
+                  .Where(s => s.ambience.ToString() == testrequest);
+                return View(query);
+            }
+        }
+        
+        
+        QUERIES THAT WORK!!!
+
+1. megalist
+
+select  restaurant_name, sum(service)+ sum(value)+ sum(ambience)+sum(menu)+sum(eco_friendly) as metascore from megalist
+
+group by restaurant_name
+order by 'metascore' desc
+
+
+
+2. similar but not great to 1.
+
+select  restaurant_name, sum(service)+ sum(value)+ sum(ambience)+sum(menu)+sum(eco_friendly) as metascore from megalist
+
+group by restaurant_name
+
