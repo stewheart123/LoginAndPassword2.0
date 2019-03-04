@@ -14,10 +14,29 @@ namespace LoginAndPassword2.Controllers
     {
         private Entities db = new Entities();
 
-        // GET: megaLists
+         // GET: megaLists
         public ActionResult Index()
         {
-            return View(db.megaLists.ToList());
+
+            // example query that filters only ambience over 3
+            //var query = db.megaLists
+            //                     .Where(s => s.ambience > 3);
+            //return View(query);
+            // example that matches ambience to value set in url request
+
+            string testrequest = Request.QueryString.ToString();
+            if (testrequest == "")
+            {
+                return View(db.megaLists.ToList());
+            }
+
+            else
+            {
+                var query = db.megaLists
+
+                  .Where(s => s.ambience.ToString() == testrequest);
+                return View(query);
+            }
         }
 
         // GET: megaLists/Details/5
