@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+    ViewBag.Title = User.Identity.GetUserName() + " MyLists";
+}
+
+<h2>@ViewBag.title</h2>
+
+@*add foreach loop that shows all tables*@
+
+<p><a href="/megaLists" class="btn btn-primary btn-lg">Make a new list</a></p>
+

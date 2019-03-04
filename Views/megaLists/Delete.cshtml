@@ -1,0 +1,123 @@
+﻿@model LoginAndPassword2.Models.megaList
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>megaList</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.restaurant_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.restaurant_location)
+        </dd>
+
+        @*<dt>
+                @Html.DisplayNameFor(model => model.ranking)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ranking)
+            </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.service) @stars(Model.service)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.service)*@
+            @*@Html.DisplayNameFor(model => model.service_comment)*@
+            @Html.DisplayFor(model => model.service_comment)
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value) @stars(Model.value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value_comment)
+            @*@Html.DisplayFor(model => model.value)*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ambience) @stars(Model.ambience)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.ambience)*@
+            @Html.DisplayFor(model => model.ambience_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.menu) @stars(Model.menu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.menu_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eco_friendly) @stars(Model.eco_friendly)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eco_friendly_comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.would_go_again)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.would_go_again)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tempt_me_back)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tempt_me_back)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+
+
+</div>
+
+@helper stars(int value)
+{if (value == 0)
+    {<p>Big fat zero</p>}
+    else
+    {
+        for (int x = value; x > 0; x--)
+        {<img class="starSmall" src="http://www.stickpng.com/assets/images/580b585b2edbce24c47b2913.png" />}
+    }
+
+}
